@@ -1,0 +1,1 @@
+python train.py --data_path UMLS --do_train --do_test --ent_negative_sample_size 128 --rel_negative_sample_size 64 --train_batch_size 512 --exp_name UMLS_ex --use_q_visible --lr 4e-4 --kge_path UMLS-complex --data_name synthetic_drop_dup --kge_hidden_size 768

@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python train.py --exp_name UMLS  --use_scheduler cosine --lr 4e-4 --do_train --aligner_path UMLS_ex  --do_test_new --smoothing 0.9 --neg_layer_learnable --kge_path UMLS-complex --reasoner_hidden_size 768 --kge_hidden_size 768 --data_path UMLS --path_exp_name UMLS_neg_8e-4_xl_1e-3 --path_checkpoint 2256 --num_epochs 30
