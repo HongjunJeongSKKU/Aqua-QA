@@ -1,6 +1,6 @@
 Aqua-QA
 =============
-
+This repository contains official implementation of paper "Enhancing Complex Reasoning in Knowledge Graph Question Answering Through Query Graph Approximation".
 This repository is based on [Q2T](https://github.com/YaooXu/Q2T). 
 
 For pretraining of Align module, run the following commands:
