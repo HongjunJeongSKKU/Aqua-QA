@@ -1,1 +1,0 @@
-python train.py --data_path CODEX --do_train --do_test --rel_negative_sample_size 64 --train_batch_size 1024 --exp_name CODEX_ex --use_q_visible --lr 8e-4 --kge_path CODEX-complex --data_name synthetic_drop_dup

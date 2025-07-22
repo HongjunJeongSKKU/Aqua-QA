@@ -1,1 +1,0 @@
-CUDA_VISIBLE_DEVICES=0 python train.py --exp_name CODEX  --use_scheduler cosine --lr 2e-4 --do_train --aligner_path CODEX_ex  --do_test_new --smoothing 0.9 --neg_layer_learnable --kge_path CODEX-complex --reasoner_hidden_size 1024 --kge_hidden_size 2000 --data_path CODEX --path_exp_name codex_ex --path_checkpoint 3365  --num_epochs 100
