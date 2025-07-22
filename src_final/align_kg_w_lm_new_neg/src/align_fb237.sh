@@ -1,0 +1,1 @@
+python train.py --data_path FB15k-237 --do_train --do_test --ent_negative_sample_size 256 --rel_negative_sample_size 256 --train_batch_size 1024 --exp_name FB237_ex --use_q_visible --lr 4e-4 --kge_path UMLS-complex --data_name synthetic_drop_dup --kge_hidden_size 2000 --num_layers 3 --kge_path FB237-complex
