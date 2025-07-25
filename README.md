@@ -1,15 +1,15 @@
 Aqua-QA
 =============
-This repository is the official implementation for the paper "Enhancing Complex Reasoning in Knowledge Graph Question Answering Through Query Graph Approximation".
+This repository is the official implementation for the ACL Findings, 2025 paper "Enhancing Complex Reasoning in Knowledge Graph Question Answering Through Query Graph Approximation"([paper](https://aclanthology.org/2025.findings-acl.1387/)).
 
 This repository is based on [Q2T](https://github.com/YaooXu/Q2T) and [BetaE](https://github.com/snap-stanford/KGReasoning). 
 
-
+## Requirements
+    
+    conda env create -f aqua-qa.yaml
 
 ## Synthetic Data Generation Process
 
-<details>
-    <summary>Check</summary>
     
     cd data_generation
 
@@ -58,11 +58,9 @@ If you want to follow the generation process step by step, you can follow the st
     ```
     python create_training_data.py --dataset CODEX --gen_train
     ```
-</details>
 
 ## Query decomposition module
-<details>
-    <summary>Check</summary>
+
 This code will generate the sub questions from the original question.
 The final output data is located in data/CODEX/train-subq_drop_dup.parquet
 You can simply run generate.sh to process all datasets or select a specific dataset.
@@ -79,21 +77,14 @@ When the data_type is one of train/valid/test, the data with sub-questions added
 
 For example, if sub-questions were generated for data/FB15k-237/train-drop_dup.parquet, the final data should be saved as data/FB15k-237/train-subq_drop_dup.parquet.
 
-
-</details>
-
 ## Pretraining of KGE model
-<details>
-<summary>Check</summary>
+
 Please refer <a href="https://github.com/YaooXu/Q2T/tree/master/ssl-relation-prediction">ssl-relation-prediction</a>.
 
 The saved model should be located at src_final/align_kg_w_lm_new_neg/src/KGE/models.
 
-</details>
-
 ## Pretraining of Relation extraction module
-<details>
-<summary>Check</summary>
+
 Query decomposition should be performed before pretraining of Rleatoin extractoin module.
 
 For pretraining of Relation extraction module, run the following commands:
@@ -117,11 +108,7 @@ For pretraining of Relation extraction module, run the following commands:
     # For CoDEx dataset
     ./rel_codex.sh
 
-</details>
-
 ## Pretraining of Align module
-<details>
-<summary>Check</summary>
 
 For pretraining of Align module, run the following commands:
 
@@ -140,11 +127,8 @@ For pretraining of Align module, run the following commands:
 
     #For CoDEx dataset
     ./align_codex.sh
-</details>
 
 ## Training of Reasoner
-<details>
-<summary>Check</summary>
 
 All of the above tasks must be completed in order to train Reasoner.
 
@@ -164,4 +148,21 @@ Then, to reproduce the final results of CFKGQA for FB15k-237, CoDEx or UMLS, sim
 
     #For CoDEx dataset
     ./run_codex.sh
-</details>
+
+## Citation
+
+If this repository is helpful for you, please cite this paper.
+
+    @inproceedings{jeong-etal-2025-enhancing,
+        title = "Enhancing Complex Reasoning in Knowledge Graph Question Answering through Query Graph Approximation",
+        author = "Jeong, Hongjun  and
+            Kim, Minji  and
+            Jung, Heesoo  and
+            Kim, Ko Keun  and
+            Park, Hogun",
+        booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
+        year = "2025",
+        publisher = "Association for Computational Linguistics",
+        pages = "27038--27056",
+        ISBN = "979-8-89176-256-5",
+    }
